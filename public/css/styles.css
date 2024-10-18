@@ -1,47 +1,173 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Georgia', serif;
+    /* A more classic font */
+    background: linear-gradient(to bottom, #f0e68c, #d9c99b);
+    /* Soft gradient from light yellow to beige */
+    background-size: cover;
+    /* Ensure the background covers the entire area */
+    transition: background-color 0.5s ease;
+    /* Smooth transition for background color */
+    background: url(https://media.discordapp.net/attachments/1147843135452479508/1296540613688299520/DALLE_2024-10-18_01.27.22_-_A_green-themed_background_resembling_a_modern_library_setting_with_shades_of_green_as_the_primary_color_for_bookshelves_furniture_and_decor._Splash.webp?ex=6712a90a&is=6711578a&hm=cbac9c96afdd365716ece3e0d877a1fdc64324f1f0553403fb60e516311044a6&=&format=webp&width=1183&height=676) no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+.headBar {
+    width: 100%;
+    height: 50px;
+    background-color: #2E8B57;
+    /* Dark green */
+    border-bottom: 5px solid #FFD700;
+    /* Gold border */
+    border-radius: 10px;
 }
 
 .login-container {
     width: 300px;
-    margin: 100px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 200px auto;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: none;
+    opacity: 1;
+    animation: pulse 2s infinite;
+    border: 1px solid #ccc;
+    transition: transform 0.5s ease; /* Add transition effect */
+}
+
+.login-container:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 h1 {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 36px;
+    color: #2E8B57;
+    /* Dark green */
 }
 
 label {
     display: block;
     margin: 10px 0 5px;
+    font-size: 18px;
+    color: #333333;
+    /* Dark gray for better readability */
 }
 
 input {
-    width: 100%;
+    width: 95%;
     padding: 8px;
     margin-bottom: 10px;
+    border: 1px solid #2E8B57;
+    /* Dark green border */
+    border-radius: 4px;
+    background-color: #ffffff;
+    /* White background for inputs */
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    /* Transition for focus effect */
+}
+
+input:focus {
+    box-shadow: 0 0 10px #2E8B57;
+    /* Dark green glow on focus */
+    transform: scale(1.02);
+    /* Slightly scale up on focus */
 }
 
 button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #2E8B57;
     border: none;
     color: #fff;
     cursor: pointer;
+    margin-top: 10px;
+    animation: pulse 2s infinite; /* Add pulsing animation */
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #3CB371;
+    /* Medium sea green on hover */
+    transform: translateY(-2px);
+    /* Slightly move up on hover */
+}
+
+button:focus {
+    outline: none;
+    /* Remove default outline */
+    box-shadow: 0 0 5px #FFD700;
+    /* Gold glow on focus */
 }
 
 #message {
     margin-top: 20px;
     text-align: center;
+    font-size: 18px;
+    color: #333333;
+    /* Dark gray for better readability */
+}
+
+.text {
+    color: #333333;
+    /* Dark gray for better readability */
+}
+#popup-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 2px solid #2E8B57; /* Dark green border */
+    border-radius: 15px; /* More rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    display: none;
+    animation: bounceIn 0.5s ease; /* Bounce-in effect */
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8); /* Start smaller */
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.05); /* Slightly larger */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1); /* End at normal size */
+    }
+}
+
+#popup-box p {
+    font-size: 18px;
+    color: #333333; /* Dark gray for better readability */
+    text-align: center; /* Center text */
+}
+
+#close-btn {
+    background-color: #4CAF50; /* Green button */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Center button */
+    margin: 0 auto; /* Center horizontally */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+#close-btn:hover {
+    background-color: #3e8e41; /* Darker green on hover */
 }
